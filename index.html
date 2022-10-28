@@ -378,7 +378,7 @@
     </main>
     <footer class="footer">
       <div class="container footer-list">
-        <div>
+        <div class="footer-address-wrapper">
           <a class="logo-footer" href="./index.html" lang="en"
             ><span class="logo-web-footer">Web</span
             ><span class="logo-studio-footer">Studio</span></a
@@ -440,6 +440,26 @@
             </li>
           </ul>
         </div>
+        <form class="subscribe" name="subscribe-form">
+          <div class="subscribe-block">
+            <label class="subscribe-title" for="subscribe-email"
+              >Підпишіться на розсилку</label
+            >
+            <input
+              class="subscribe-email"
+              type="email"
+              name="subscribe-email"
+              id="subscribe-email"
+              placeholder="E-mail"
+            />
+          </div>
+          <button class="subscribe-button" type="submit">
+            Підписатися
+            <svg class="subscribe-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </footer>
 
@@ -452,9 +472,9 @@
         </button>
         <h2 class="form-title">Залиште свої дані, ми вам передзвонимо</h2>
         <form class="form-modal">
-          <div class="form-box">
+          <div class="form-wrapper">
             <label class="form-label" for="form-name">Ім'я</label>
-            <div class="form-input-box">
+            <div class="form-input-wrapper">
               <input
                 class="form-input"
                 type="text"
@@ -466,9 +486,9 @@
               </svg>
             </div>
           </div>
-          <div class="form-box">
+          <div class="form-wrapper">
             <label class="form-label" for="form-phone">Телефон</label>
-            <div class="form-input-box">
+            <div class="form-input-wrapper">
               <input
                 class="form-input"
                 type="tel"
@@ -480,10 +500,10 @@
               </svg>
             </div>
           </div>
-          <div class="form-box">
+          <div class="form-wrapper">
             <label class="form-label" for="form-email">Пошта</label>
 
-            <div class="form-input-box">
+            <div class="form-input-wrapper">
               <input
                 class="form-input"
                 type="email"
@@ -495,7 +515,7 @@
               </svg>
             </div>
           </div>
-          <div class="form-box">
+          <div class="form-textarea-wrapper">
             <label class="form-label" for="form-comment">Коментар</label>
             <textarea
               class="form-comment"
