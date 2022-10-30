@@ -1115,6 +1115,13 @@ img {
 .form-checkbox-link {
     color: var(--accent-color);
     text-decoration: underline;
+    outline: none;
+}
+
+.form-checkbox-link:focus {
+    border: 1px solid var(--accent-color);
+    border-radius: 2px;
+    z-index: 1;
 }
 
 .form-button {
