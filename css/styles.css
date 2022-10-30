@@ -669,6 +669,9 @@ img {
 
 .subscribe-email {
     padding: 15px 16px 15px 16px;
+
+    transition:  border-color 250ms var(--cubic-bezier-primary);
+
     background-color: transparent;
     font-size: 16px;
     line-height: 1.25;
@@ -678,6 +681,18 @@ img {
     border-radius: 4px;
     outline: none;
 
+}
+
+.subscribe-email:placeholder-shown{
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+}
+
+.subscribe-email:hover,
+.subscribe-email:focus {
+    border-color:var(--accent-color);
 }
 
 .subscribe-button {
@@ -907,12 +922,27 @@ img {
     width: 30px;
     height: 30px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: var(--primary-white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+    color: rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: fill 250ms var(--cubic-bezier-primary);
+
+    fill: currentColor;
+}
+
+.button-close:hover .icon-close,
+.button-close:focus .icon-close {
+    fill: var(--accent-color);
 }
 
 .form-modal {
@@ -961,6 +991,10 @@ img {
     padding-bottom: 10px;
     padding-right: 12px;
     padding-left: 42px;
+
+    transition: fill 250ms var(--cubic-bezier-primary), 
+                border-color 250ms var(--cubic-bezier-primary);
+
     border: 1px solid var(--form-border-color);
     border-radius: 4px;
     outline: none;
@@ -976,6 +1010,9 @@ img {
     top: 50%;
     left: 12px;
     transform: translateY(-50%);
+
+    transition: fill 250ms var(--cubic-bezier-primary), 
+                border-color 250ms var(--cubic-bezier-primary);
 }
 
 .form-input:focus,
@@ -989,6 +1026,10 @@ img {
     height: 120px;
     padding: 12px 16px;
     resize: none;
+
+    transition: fill 250ms var(--cubic-bezier-primary), 
+                border-color 250ms var(--cubic-bezier-primary);
+
     border: 1px solid var(--form-border-color);
     border-radius: 4px;
     outline: none;
@@ -1009,38 +1050,71 @@ img {
 
 
 .form-checkbox-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 8px;
     margin-bottom: 30px;
 }
 
+.form-checkbox {
+    appearance: none;
+}
 
-
-.form-checkbox-icon-wrapper {
+.form-checkbox-label-wraper {
     position: relative;
-    width: 16px;
-    height: 15px;
-    border: 2px solid var(--title-text-color);
-    border-radius: 2px;
 }
 
 .form-checkbox-icon {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 12px;
+    transform: translateY(-50%);
+
+    transition: fill 250ms var(--cubic-bezier-primary), 
+                opacity 250ms var(--cubic-bezier-primary);
+
     background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 2px;
     opacity: 0;
+    
 }
 
 
 .form-checkbox-label{
+    padding-left: 25px;
     font-size: 14px;
     line-height: 1.71;
     color: var(--primaty-text-color);
     
+}
+
+.form-checkbox-label::before {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    content: "";
+    width: 16px;
+    height: 15px;
+
+    transition: fill 250ms var(--cubic-bezier-primary), 
+                opacity 250ms var(--cubic-bezier-primary);
+    border: 2px solid var(--title-text-color);
+    border-radius: 2px;
+}
+
+.form-checkbox:checked + .form-checkbox-label .form-checkbox-icon {
+    fill: var(--primary-white-color);
+    z-index: 1;
+    opacity: 1;
+}
+
+.form-checkbox-link {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .form-button {
@@ -1050,7 +1124,7 @@ img {
     padding: 10px 32px;
     border: 0px solid transparent;
     border-radius: 4px;
-auto
+
     transition: background-color 250ms var(--cubic-bezier-primary), 
                 box-shadow 250ms var(--cubic-bezier-primary); 
 
@@ -1062,11 +1136,13 @@ auto
     line-height: 1.9;
     letter-spacing: 0.06em;
     cursor: pointer;
+    outline: none;
     
 }
 
-.form-button:hover {
+.form-button:hover,
+.form-button:focus {
     background: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-  wrapper
+  
